@@ -44,23 +44,23 @@ sap.ui.define([
 		},
 		
 		produtoReceived: function() {
-			this.getView().byId("produto").setSelectedKey(this.getModel("model").getProperty("/Produto"));
+			//this.getView().byId("produto").setSelectedKey(this.getModel("model").getProperty("/Produto"));
 		},
 		
 		unidadeReceived: function() {
-			this.getView().byId("unidade").setSelectedKey(this.getModel("model").getProperty("/Unidade"));
+			//this.getView().byId("unidade").setSelectedKey(this.getModel("model").getProperty("/Unidade"));
 		},
 		
 		corretorReceived: function() {
-			this.getView().byId("corretor").setSelectedKey(this.getModel("model").getProperty("/Corretor"));
+			//this.getView().byId("corretor").setSelectedKey(this.getModel("model").getProperty("/Corretor"));
 		},
 		
 		safraReceived: function() {
-			this.getView().byId("safra").setSelectedKey(this.getModel("model").getProperty("/Safra"));
+			//this.getView().byId("safra").setSelectedKey(this.getModel("model").getProperty("/Safra"));
 		},
 		
 		variedadeReceived: function() {
-			this.getView().byId("variedade").setSelectedKey(this.getModel("model").getProperty("/Variedade"));
+			//this.getView().byId("variedade").setSelectedKey(this.getModel("model").getProperty("/Variedade"));
 		},
 		
 		handleSearchProduto: function(oEvent){
@@ -80,7 +80,7 @@ sap.ui.define([
 		
 		handleSearchSafra: function(oEvent){
 			var sInputId = oEvent.getParameter("id");
-			SafraHelpDialog.handleValueHelp(this.getView(), sInputId);
+			SafraHelpDialog.handleValueHelp(this.getView(), sInputId, this);
 		},
 		
 		handleSearchVariedade: function(oEvent){
@@ -142,6 +142,11 @@ sap.ui.define([
 			this.getView().byId("corretor").setValue(null);
 			this.getView().byId("safra").setValue(null);
 			this.getView().byId("variedade").setValue(null);
+		},
+		
+		
+		loadSafras: function(oEvent){
+			oEvent.getSource().getBinding("items").resume();
 		},
 		
 		onInserirLinha: function(oEvent) {
@@ -272,7 +277,7 @@ sap.ui.define([
 						groupId: "upd" 
 				});
 			}
-			debugger;
+			
 			oModel.submitChanges({
 				groupId: "upd",
 				success: function(oResponse) {

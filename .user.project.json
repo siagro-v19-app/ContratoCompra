@@ -16,7 +16,11 @@
         "runnerId": "webapprunner",
         "id": 2863726,
         "displayName": "Run index.html",
+<<<<<<< Upstream, based on cd6aeb47926ba2651a1aff4a29814f72250364fe
         "lastRunTimeStamp": 1554731078817
+=======
+        "lastRunTimeStamp": 1554731431735
+>>>>>>> 81d059b help safra refresh no model
       }
     }
   ]
