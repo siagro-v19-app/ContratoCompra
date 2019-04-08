@@ -163,8 +163,8 @@ sap.ui.define([
 		onRemoverLinha: function(oEvent){
 			var oContratoSaldoModel = this.getView().getModel("contratosaldo");
 			
-			//var oTable = this.getView().byId("tableContratoSaldo");
-			var oTable = sap.ui.getCore().byId("tableContratoSaldo");
+			var oTable = this.getView().byId("tableContratoSaldo");
+			//var oTable = sap.ui.getCore().byId("tableContratoSaldo");
 			
 			var nIndex = oTable.getSelectedIndex();
 			var oModel = this.getModel();
