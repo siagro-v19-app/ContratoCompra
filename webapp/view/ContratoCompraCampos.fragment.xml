@@ -4,10 +4,9 @@
 	xmlns:core="sap.ui.core"
 	xmlns:t="sap.ui.table"
 	xmlns:f="sap.ui.layout.form">
-		<Panel headerText="Contrato Compra" height="100%">
 			<TabContainer id="tabContrato">
 				<items>
-					<TabContainerItem name="Dados do Contrato">
+					<TabContainerItem name="Campos - Contrato de Compra" >
 						<content>
 							<VBox class="sapUiSmallMagrin">
 								<f:SimpleForm id="formContrato"
@@ -230,7 +229,7 @@
 							</VBox>
 						</content>
 					</TabContainerItem>
-					<TabContainerItem name="Locais de Carregamento">
+					<TabContainerItem name="Inserir Contrato">
 						<content>
 							<t:Table id="tableContratoSaldo"
 								rows="{contratosaldo>/}"
@@ -239,13 +238,13 @@
 								selectionBehavior="Row"
 								editable="true"
 								visibleRowCountMode="Interactive"
-								enableCustomFilter="true"
-								height="100%">
+								enableCustomFilter="true">
 								<t:toolbar>
 									<Toolbar>
+										<Title text="Inserir Contrato"/>
 										<ToolbarSpacer/>
-										<Button id="inserir" icon="sap-icon://add" text="Inserir Novo Local" press="onInserirLinha"/>
-										<Button id="remover" icon="sap-icon://delete" text="Remover" press="onRemoverLinha"/>
+										<Button id="inserir" icon="sap-icon://add" press="onInserirLinha"/>
+										<Button id="remover" icon="sap-icon://delete" press="onRemoverLinha"/>
 									</Toolbar>
 								</t:toolbar>
 								<t:columns>
@@ -347,5 +346,4 @@
 					</TabContainerItem>
 				</items>
 			</TabContainer>
-		</Panel>
 </core:FragmentDefinition>
